@@ -1,0 +1,41 @@
+@import "../scss-bootstrap/functions";
+@import "../scss-bootstrap/variables";
+
+//ADDING COLORS to the original palette
+
+$violet: #754ffe;
+$green-pastel: #19cb98;
+$pastel-theme: #ffeeda;
+$orange-star: #f9a644;
+
+$new-theme-colors: (
+  "violet": $violet,
+  "green-pastel": $green-pastel,
+  "pastel-theme": $pastel-theme,
+  "orange-star": $orange-star,
+);
+
+$theme-colors: map-merge($theme-colors, $new-theme-colors);
+
+//ADDING NEW FONT//
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap");
+
+$new-font-family: "Inter", sans-serif;
+
+$font-family-base: $new-font-family;
+
+//ADDING ICONS//
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@import "../scss-bootstrap/bootstrap.scss";
+// qui importo tutti i partials nuovamente per creare una versione completa di bootstrap, personalizzata
+
+// prova: importiamo tutti i sorgenti di bootstrap senza alterarli
+// @import 'scss/bootstrap.scss';
+// questo compilerà bootstrap nella sua versione "classica", "vanilla"
+
+// come mai importando alla fine nuovamente TUTTO bootstrap.scss i colori non si sono sovrascritti nuovamente
+// con gli originali? Perchè QUASI TUTTE le variabili in bootstrap sono state create con un flag !default
+
+// il flag !default serve a creare una variabile ma solamente nel caso in cui quella variabile NON sia stata già
+// definita
